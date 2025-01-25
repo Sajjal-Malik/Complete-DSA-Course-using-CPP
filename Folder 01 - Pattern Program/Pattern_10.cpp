@@ -2,10 +2,10 @@
 using namespace std;
 
 // Pattern type using this program 
-// 1
-// 2 1
-// 3 2 1
-// 4 3 2 1
+// AAAA
+// BBBB
+// CCCC
+// DDDD
 
 int main(){
 
