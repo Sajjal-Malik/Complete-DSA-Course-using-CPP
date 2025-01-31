@@ -1,8 +1,6 @@
-#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to convert a binary number (represented in decimal form) to its decimal equivalent
 void binaryToDecimal(int n)
 {
     int ans = 0; // Variable to store the resultant decimal value
@@ -24,14 +22,12 @@ void binaryToDecimal(int n)
         i++; // Move to the next position for the next digit
     }
 
-    // Output the final decimal value
     cout << "Answer in Decimal is: " << ans << endl;
 }
 
-// Main function to execute the program
 int main()
 {
-    int n = 10101; // Example binary number in decimal form
+    int n = 10101;
     binaryToDecimal(n); // Call the function to convert the binary number to decimal
 
     return 0; // Indicate successful execution

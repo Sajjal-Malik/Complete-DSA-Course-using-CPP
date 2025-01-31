@@ -1,9 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Function to reverse the digits of an integer
 int reverseInteger(int n) {
-    int answer = 0; // Initialize the variable to store the reversed integer
+    int answer = 0;
 
     // Loop until all digits have been processed
     while (n != 0) {
@@ -17,15 +16,14 @@ int reverseInteger(int n) {
         answer = (answer * 10) + lastDigit; 
         n /= 10; // Remove the last digit from 'n'
     }
-    return answer; // Return the reversed integer
+    return answer;
 }
 
 int main() {
-    int num = 123; // Initialize a number to be reversed
+    int num = 123; 
 
-    int result = reverseInteger(num); // Call the reverseInteger function
+    int result = reverseInteger(num);
 
-    // Output the reversed number to the console
     cout << "The reverse of this number is -> " << result << endl;
 
     return 0; // Indicate that the program finished successfully
