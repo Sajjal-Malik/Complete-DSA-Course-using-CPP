@@ -1,14 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool isPresent(int arr[3][4], int target, int row, int col){
+void printRowSum(int arr[3][4], int row, int col){
     for(int i = 0; i < row; i++){
+        int sum = 0;
         for(int j = 0; j < col; j++){
-            if(arr[i][j] == target)
-                return true;
+            sum += arr[row][col];
         }
+        cout << sum << " ";
     }
-    return false;
+    cout << endl;
 }   
 
 
@@ -27,16 +28,8 @@ int main(){
         }
         cout << endl;
     }
-    int target = 0;
-    cout << "Enter the element you want to search in 2D Array? " << endl;
-    cin >> target;
-
-    if(isPresent(arr, target, 3, 4)){
-        cout << "Target value is present in 2D Array" << endl;
-    }
-    else{
-        cout << "Target value is not present in 2D Array" << endl;
-    }
+    
+    printRowSum(arr, 3, 4);
 
 
 
