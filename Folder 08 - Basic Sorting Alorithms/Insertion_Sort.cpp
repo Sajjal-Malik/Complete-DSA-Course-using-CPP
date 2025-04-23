@@ -16,8 +16,9 @@ void insertionSort(int arr[], int len)
                 // shift the value
                 arr[j + 1] = arr[j];
             }
-            else
+            else 
             {
+                // stop the iteration
                 break;
             }
         }
