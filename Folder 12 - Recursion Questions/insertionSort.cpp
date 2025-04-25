@@ -1,18 +1,37 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void sortArray(int *arr, int n){
-    
+// Helper function to insert element in sorted subarray
+void insert(int arr[], int n) {
+    int temp = arr[n];
+    int j = n - 1;
+    while (j >= 0 && arr[j] > temp) {
+        arr[j + 1] = arr[j];
+        j--;
+    }
+    arr[j + 1] = temp;
 }
 
-int main(){
+// Recursive insertion sort
+void recursiveInsertionSort(int arr[], int n) {
+    // Base case
+    if (n <= 1)
+        return;
 
-    int arr[] = {5, 2, 3, 1, 9};
-    int n = sizeof(arr)/sizeof(arr[0]);
+    // Sort first n-1 elements
+    recursiveInsertionSort(arr, n - 1);
 
-    sortArray(arr, n);
+    // Insert nth element in sorted array of size n-1
+    insert(arr, n - 1);
+}
 
-    for(int i = 0; i < n; i++){
+int main() {
+    int arr[] = {64, 22, 55, 11, 25};
+    int len = sizeof(arr) / sizeof(arr[0]);
+
+    recursiveInsertionSort(arr, len);
+
+    for (int i = 0; i < len; i++) {
         cout << arr[i] << " ";
     }
 
