@@ -15,15 +15,6 @@ class Hero{  // empty class takes 1 Byte of Memory
     Hero(){
         cout << "constructor called" << endl;
     }
-
-    Hero(int health){
-        this->health = health;  // this is a pointer that stores the address of current object
-    }
-
-    Hero(int health, char level){
-        this->health = health;
-        this->level = level;
-    }
         
     void print(){
         cout << level << endl;
@@ -51,15 +42,34 @@ class Hero{  // empty class takes 1 Byte of Memory
 
 int main(){
 
-    // when an instance is created a constructor is envoked by befault  (Default Constructor)
+    Hero malik;
+    malik.setHealth(99);
+    malik.setLevel('D');
+    
+    cout << malik.getHealth() << endl;
+    cout << malik.getLevel() << endl;
 
-    // object created statically (constructor called)
-    Hero david(88);
 
-    // object created dynamically (constructor called)
-    Hero *john = new Hero(99);
+    // static allocation
+    Hero h1;
+    h1.level = 'A';
+    h1.setHealth(89);
 
-    Hero jack(67, 'C');
+    cout << "Level is: " << h1.level << endl;
+    cout << "Health is: " << h1.getHealth() << endl;
+    
+
+    // Dynamic Allocation
+    Hero *h2 = new Hero();
+
+    h2->level = 'C';
+    h2->setHealth(90);
+
+    cout << "Level is: " << (*h2).level << endl;
+    cout << "Health is: " << (*h2).getHealth() << endl;
+    
+    cout << "Level is: " << h2->level << endl;
+    cout << "Health is: " << h2->getHealth() << endl;
 
     return 0;
 }

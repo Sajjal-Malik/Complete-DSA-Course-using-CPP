@@ -15,15 +15,6 @@ class Hero{  // empty class takes 1 Byte of Memory
     Hero(){
         cout << "constructor called" << endl;
     }
-
-    Hero(int health){
-        this->health = health;  // this is a pointer that stores the address of current object
-    }
-
-    Hero(int health, char level){
-        this->health = health;
-        this->level = level;
-    }
         
     void print(){
         cout << level << endl;
@@ -54,12 +45,10 @@ int main(){
     // when an instance is created a constructor is envoked by befault  (Default Constructor)
 
     // object created statically (constructor called)
-    Hero david(88);
+    Hero david;
 
     // object created dynamically (constructor called)
-    Hero *john = new Hero(99);
-
-    Hero jack(67, 'C');
+    Hero *john = new Hero();
 
     return 0;
 }
