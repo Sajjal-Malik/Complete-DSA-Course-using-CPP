@@ -24,6 +24,12 @@ class Hero{  // empty class takes 1 Byte of Memory
         this->health = health;
         this->level = level;
     }
+
+    // Copy Constructor
+    Hero(Hero &temp){
+        this->health = temp.health;
+        this->level = temp.level;
+    }
         
     void print(){
         cout << this->health << endl;
@@ -55,8 +61,12 @@ int main(){
    Hero john(99, 'D');
    john.print();
 
-//    cout << john.getHealth() << endl;
-//    cout << john.getLevel() << endl;
+   // copy constructor
+   Hero jack(john);
+   jack.print();
+
+//    cout << jack.getHealth() << endl;
+//    cout << jack.getLevel() << endl;
 
     return 0;
 }
